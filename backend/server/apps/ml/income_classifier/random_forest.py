@@ -42,7 +42,7 @@ class RandomForestClassifier:
     def compute_prediction(self, input_data):
         try:
             input_data = self.preprocessing(input_data)
-            prediction = self.predict(input_data)[0]  # only one sample
+            prediction = self.predict(input_data)[1]  # only one sample
             prediction = self.postprocessing(prediction)
         except Exception as e:
             return {"status": "Error", "message": str(e)}
